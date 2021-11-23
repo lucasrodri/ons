@@ -253,11 +253,12 @@ On each call, your algorithm can either accept (via the acceptFlow method) or bl
 
 ## JavaDoc
 
-For details, see [JavaDoc](http://ons-simulator.com/javadoc){:target="_blank"}
+For details, see <a href="https://ons-simulator.com/javadoc" target="_blank">JavaDoc</a>
+
 
 ## WebSite
 
-For details, see [https://ons-simulator.com](https://ons-simulator.com){:target="_blank"}
+For details, see <a href="https://ons-simulator.com/" target="_blank">https://ons-simulator.com/</a>
 
 
 
