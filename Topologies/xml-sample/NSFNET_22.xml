@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--type="wdmsim"-->
+<!--type="eonsim"-->
+<!--type="eonsimBulk"-->
+<!--[raPacket="ra.mypacket"]-->
+<ons version="3.0" type="eonsim">
+    <!--module is the Routing Algorithm class in java-->
+    <ra module="KSP"/>
+
+    <!-- Optional file for trace file creation -->
+    <trace file="trace.tr"/>
+    <!--rate in Mbps 1000Mbps = 1Gbps | 
+    'cos' represents the number of service classes | 
+    'statisticStart' indicates which call will start collecting statistics  -->
+    <traffic calls="100000" load="500" cos="5" statisticStart="0">
+        <!--'cos' here starts with '0' and indicates the class of service id-->
+        <!--'weight' weight of this call considered. For purposes of statistical calculations and a nonuniform distribution--> 
+        <!--'holding-time' is in second--> 
+        <calls holding-time="1" rate="10000" cos="0" weight="5"/>
+        <calls holding-time="1" rate="40000" cos="1" weight="4"/>
+        <calls holding-time="1" rate="100000" cos="2" weight="3"/>
+        <calls holding-time="1" rate="160000" cos="3" weight="2"/>
+        <calls holding-time="1" rate="400000" cos="4" weight="1"/>
+        
+        <!-- The traffic distribuition -->
+        <!-- It is not mandatory to place all call pairs. However pairs that are not placed will have their weight = 1; -->
+        <!-- 'ids' is the id source node | 'idd' is the id destination node  -->
+        <!--
+        <pair ids="0" idd="1" weight="10"/>
+        <pair ids="0" idd="2" weight="80"/>
+        <pair ids="0" idd="3" weight="30"/>
+        ...
+        ...
+        ...
+        -->
+    </traffic>
+
+    <virtual-topology name="NSFNET22">
+        <!-- To create static lighpaths -->
+        <!-- 'src' is source id node | -->  
+        <!-- 'dst' is source id destination | -->  
+        <!-- 'links' the links that compose the lightpath -->  
+        <!-- 'firstSlot' the firstSlot of this lightpath -->
+        <!-- 'lastSlot' the lastSlot of this lightpath -->
+        <!-- 'modulation' the modulation of this lightpath -->
+        <!-- 'reserved' whether this lightpath will be removed when idle or not -->
+
+        <!--For create lightpaths-->
+        
+        <!-- For ONS-WDM (wdmsim) -->
+        <!--<lightpath src="0" dst="1" links="0" wavelengths="1,2" /> -->
+        <!--<lightpath src="0" dst="1" links="2,7" wavelengths="1,2" /> -->
+
+        <!-- For ONS-EON (eonsim) or ONS-BULK (eonsimBulk) -->
+        <!--<lightpath src="0" dst="1" links="0" firstSlot="0" lastSlot="1" modulation="BPSK" reserved="true"/>-->
+        <!--<lightpath src="0" dst="1" links="2,7" firstSlot="0" lastSlot="1" modulation="BPSK"/>-->
+    </virtual-topology>
+
+    <!-- Only for ONS-EON (eonsim) or ONS-BULK (eonsimBulk) -->
+    <!-- 'physical-distance' Whether to use the maximum range of modulation or not. This is usually 'false' if SNRaware is 'true'-->
+    <!-- 'SNRaware'  Whether the simulator will take into account SNR-related physical layer impacts. This is usually 'false' if physical-distance is 'true'-->
+    <!-- 'checkQoT='  It will check the SNR based QoS and will point out how many LPs were established with/without QoT -->
+    
+        <!-- If SNR aware is activated  -->
+        <!-- 'activeAse' activates amplifier ASE noise -->
+        <!-- 'activeNli' activates nonlinear noise in fibers -->
+        <!-- 'NF' noise figure of the amplifier, dB -->
+        <!-- 'centerFrequency' light frequency -->
+        <!-- 'alfa' dB/km, fiber loss -->
+        <!-- 'beta2'; scatter parameter -->
+        <!-- 'gama' nonlinearity of fiber -->
+        <!-- 'C' dispersion compensation rate -->
+    
+    <!-- Only for ONS-EON (eonsim) or ONS-BULK (eonsimBulk) in SDM-EON -->
+    <!-- 'XTaware'  Whether the simulator will take into account CrossTalk-related physical layer impacts. Only for SDM-EON.-->
+    <!-- 'dynamicNeighborNumber' Crosstalk will always be considered for neighbors or only when there is actually a neighboring circuit. -->
+    <!-- 'XTonOthers' Crosstalk will be considered only in the optical circuit that will be established or will be considered in the other neighbors. -->
+    
+    <!-- Crosstalk parameters  -->
+    <!-- 'k' coupling coefficient  -->
+    <!-- 'r' bend radius  -->
+    <!-- 'beta' propagation constant  -->
+    <!-- 'w_tr' core pitch  -->
+    
+    <!-- 'physical-impairment' node it is optional. If not declared default values will be used. See the classes PhysicalImpairments and Modulation-->
+    <!-- All attributes here can be omitted. The default values will be used. -->
+    <physical-impairment         
+        physical-distance="no" SNRaware="yes" checkQoT="yes"
+        activeAse="yes" activeNli="yes" NF="6" centerFrequency="193.0E+12" alfa="0.2" beta2="16.0E-24" gama="1.22" C="1.0"
+        XTaware="no" dynamicNeighborNumber="no" XTonOthers="no"
+        k="3.16E-5" r="0.055" beta="4.0E6" w_tr="45.0E-6" >
+        <!-- 'modulation name' BPSK, QPSK, 8QAM, 16QAM, 32QAM, 64QAM, 128QAM, 256QAM -->
+        <!-- 'XTthreshold' Crosstalk threshold. Only for SDM-EON.  -->
+        <!-- 'SNRthreshold' SNR threshold. -->
+        <!-- 'PC' power consumption in W. -->
+        <!-- 'maxReach' in km  -->
+        <modulation name="BPSK" XTthreshold="-14.0" SNRthreshold="6.0" PC="112.374" maxReach="8000"/>
+        <modulation name="QPSK" XTthreshold="-18.5" SNRthreshold="9.0" PC="133.416" maxReach="4000"/>
+        <modulation name="8QAM" XTthreshold="-21.0" SNRthreshold="12.0" PC="154.457" maxReach="2000"/>
+        <modulation name="16QAM" XTthreshold="-25.0" SNRthreshold="15.0" PC="175.498" maxReach="1000"/>
+        <modulation name="32QAM" XTthreshold="-27.0" SNRthreshold="18.0" PC="196.539" maxReach="500"/>
+        <modulation name="64QAM" XTthreshold="-34.0" SNRthreshold="21.0" PC="217.581" maxReach="250"/>
+    </physical-impairment>
+    
+    <!-- 'mensageProcessingTime' optional, mensage processing time in s -->
+    <!-- 'configurationTimeOXC' optional, configuration time OXC in s -->
+    <!-- 'propagationDelayTime' optional, propagation delay time in s -->
+    <!-- 'switchTime' optional, switch time in s -->
+    <!-- 'oxcTransitionTime' optional, OXC transition time (sleep/wake) in s -->
+    <!-- 'oxcSleepModeExpenditure' optional, OXC sleep mode expenditure in percent (%) -->
+    <!-- 'oxcOperationExpenditure' optional, OXC operation expenditure in W -->
+    <!-- 'oxcNodeDegreeExpenditure' optional, OXC node degree expenditure in W -->
+    <!-- 'oxcAddDropDegreeExpenditure' optional, OXC add drop degree expenditure in W -->
+    <!-- 'trOverloadExpenditure' optional, transponder overload expenditure in W -->
+    <!-- 'trIdleExpenditure' optional, transponder idle expenditure in W -->
+    <!-- 'olaExpenditure' optional, Optical line amplifier expenditure in W -->
+    <!-- 'spanSize' optional, size of a span, km -->
+    <physical-topology name="NSFNET22"
+        mensageProcessingTime="1.0E-5" configurationTimeOXC="1.0E-5" propagationDelayTime="4.0E-4"
+        switchTime="5.0E-4" oxcTransitionTime="4.5E-4" oxcSleepModeExpenditure="10.0"
+        oxcOperationExpenditure="150.0" oxcNodeDegreeExpenditure="85.0" oxcAddDropDegreeExpenditure="100.0"
+        trOverloadExpenditure="1.683" trIdleExpenditure="91.333"
+        olaExpenditure="100.0"
+        spanSize="80">
+        <!-- 'modulations' General modulations considered for all nodes if not set -->
+        <!-- 'capacity' Number of maximum slots considered by transponder if not set -->
+        <nodes modulations="BPSK, QPSK, 8QAM, 16QAM" capacity="32">
+            <!-- 'grooming-in-ports' Number transceivers in this node -->
+            <!-- 'grooming-out-ports=' Number receivers in this node -->
+            <node id="0" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="1" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="2" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="3" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="4" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="5" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="6" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="7" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="8" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="9" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="10" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="11" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="12" grooming-in-ports="32" grooming-out-ports="32" />
+            <node id="13" grooming-in-ports="32" grooming-out-ports="32" />
+        </nodes>
+        <!-- Link weigth = distance in Km Link delay = 1ms for 200Km The 'slot-size' is in MHz  -->
+        <!-- 'slots' General number of slots considered for all links if not set -->
+        <!-- 'guardband' General number of guardbands considered for all links if not set -->
+        <!-- 'slot-size' Number of slot-size considered for all links -->
+        <!-- 'cores' is optional, default is 1. If cores=1 is EON. Case Set 3,7,13 or 19 is SDM-EOM -->
+        <links slots="320" guardband="2" slot-size="12500" cores="1">  
+            <!-- 'source' source id node -->
+            <!-- 'destination' destination id node -->
+            <!-- 'delay' Time in seconds of fiber propagation -->
+            <!-- 'weight' Distance in km -->
+            <link id="0" source="0" destination="1" delay="3.75" weight="2100"/>
+            <link id="1" source="0" destination="2" delay="3.75" weight="3000"/>
+            <link id="2" source="0" destination="7" delay="3.75" weight="4800"/>
+            <link id="3" source="1" destination="0" delay="3.75" weight="2100"/>
+            <link id="4" source="1" destination="3" delay="6.5" weight="1500"/>
+            <link id="5" source="1" destination="2" delay="6.5" weight="1200"/>
+            <link id="6" source="2" destination="1" delay="6" weight="1200"/>
+            <link id="7" source="2" destination="0" delay="6" weight="3000"/>
+            <link id="8" source="2" destination="5" delay="6" weight="3600"/>
+            <link id="9" source="3" destination="1" delay="15" weight="1500"/>
+            <link id="10" source="3" destination="4" delay="15" weight="1200"/>
+            <link id="11" source="3" destination="10" delay="7.5" weight="3900"/>
+            <link id="12" source="4" destination="3" delay="7.5" weight="1200"/>
+            <link id="13" source="4" destination="5" delay="3" weight="2400"/>
+            <link id="14" source="4" destination="6" delay="3" weight="1200"/>
+            <link id="15" source="5" destination="2" delay="15" weight="3600"/>
+            <link id="16" source="5" destination="4" delay="15" weight="2400"/>
+            <link id="17" source="5" destination="13" delay="3.75" weight="3600"/>
+            <link id="18" source="5" destination="9" delay="3.75" weight="2100"/>
+            <link id="19" source="6" destination="4" delay="3" weight="1200"/>
+            <link id="20" source="6" destination="7" delay="3" weight="1500"/>
+            <link id="21" source="6" destination="9" delay="7.5" weight="2700"/>
+            <link id="22" source="7" destination="6" delay="7.5" weight="1500"/>
+            <link id="23" source="7" destination="0" delay="15" weight="4800"/>
+            <link id="24" source="7" destination="8" delay="15" weight="1500"/>
+            <link id="25" source="8" destination="9" delay="3" weight="1500"/>
+            <link id="26" source="8" destination="7" delay="3" weight="1500"/>
+            <link id="27" source="8" destination="11" delay="3" weight="600"/>
+            <link id="28" source="8" destination="12" delay="3" weight="600"/>
+            <link id="29" source="9" destination="5" delay="5.25" weight="2100"/>
+            <link id="30" source="9" destination="6" delay="5.25" weight="2700"/>
+            <link id="31" source="9" destination="8" delay="3" weight="1500"/>
+            <link id="32" source="10" destination="3" delay="3" weight="3900"/>
+            <link id="33" source="10" destination="11" delay="6" weight="1200"/>
+            <link id="34" source="10" destination="12" delay="6" weight="1500"/>
+            <link id="35" source="11" destination="13" delay="3.75" weight="600"/>
+            <link id="36" source="11" destination="8" delay="3.75" weight="600"/>
+            <link id="37" source="11" destination="10" delay="6" weight="1200"/>
+            <link id="38" source="12" destination="13" delay="6" weight="300"/>
+            <link id="39" source="12" destination="8" delay="6" weight="600"/>
+            <link id="40" source="12" destination="10" delay="6" weight="1500"/>
+            <link id="41" source="13" destination="5" delay="6" weight="3600"/>
+            <link id="42" source="13" destination="11" delay="6" weight="600"/>
+            <link id="43" source="13" destination="12" delay="6" weight="300"/>
+    </physical-topology>
+</ons>
