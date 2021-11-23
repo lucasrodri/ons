@@ -172,36 +172,36 @@ Listed below are the xml examples that describe the different scenarios/topologi
 
 | Scenario | XML Link |
 | ------ | ------ |
-| EON-General| [xml-file](https://github.com/lucasrodri/ons/-/tree/master/xml/xml-default/USA.xml) |
-| EON-BULK-BATCH| [xml-file](https://github.com/lucasrodri/ons/-/tree/master/xml/EON-BULK-BATCH/USA.xml) |
-| EON-RMLSA| [xml-file](https://github.com/lucasrodri/ons/-/tree/master/xml/EON-RMLSA/USA.xml) |
-| EON-RSA| [xml-file](https://github.com/lucasrodri/ons/-/tree/master/xml/EON-RSA/USA.xml) |
-| EON-SDM| [xml-file](https://github.com/lucasrodri/ons/-/tree/master/xml/EON-SDM/USA.xml) |
-| EON-SNRaware| [xml-file](https://github.com/lucasrodri/ons/-/tree/master/xml/EON-SNRaware/USA.xml) |
-| EON-BULK-BATCH| [xml-file](https://github.com/lucasrodri/ons/-/tree/master/xml/EON-BULK-BATCH/USA.xml) |
-| WDM| [xml-file](https://github.com/lucasrodri/ons/-/tree/master/xml/WDM/USA.xml) |
+| EON-General| [xml-file](https://github.com/lucasrodri/ons/blob/main/xml/xml-default/USA.xml) |
+| EON-BULK-BATCH| [xml-file](https://github.com/lucasrodri/ons/blob/main/xml/EON-BULK-BATCH/USA.xml) |
+| EON-RMLSA| [xml-file](https://github.com/lucasrodri/ons/blob/main/xml/EON-RMLSA/USA.xml) |
+| EON-RSA| [xml-file](https://github.com/lucasrodri/ons/blob/main/xml/EON-RSA/USA.xml) |
+| EON-SDM| [xml-file](https://github.com/lucasrodri/ons/blob/main/xml/EON-SDM/USA.xml) |
+| EON-SNRaware| [xml-file](https://github.com/lucasrodri/ons/blob/main/xml/EON-SNRaware/USA.xml) |
+| EON-BULK-BATCH| [xml-file](https://github.com/lucasrodri/ons/blob/main/xml/EON-BULK-BATCH/USA.xml) |
+| WDM| [xml-file](https://github.com/lucasrodri/ons/blob/main/xml/WDM/USA.xml) |
 
 ## XML sample topologies 
 
 | Topology name| XML sample | Image |
 | ------ | ------ | ------ |
-| 8NodesClick | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/8NodesClick.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/8NodesClick.png)|
-| 8NodesRing | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/8NodesRing.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/8NodesRing.png)|
-| COST239 | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/COST239.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/COST239.png)|
-| GERMAN | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/GERMAN.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/GERMAN.pdf)|
-| LargePacificBell | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/LargePacificBell.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/LargePacificBell.png)|
-| Manhattan4x4 | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/Manhattan4x4.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/Manhattan4x4.png)|
-| Manhattan5x5 | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/Manhattan5x5.xml) | |
-| MediumPacificBell | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/MediumPacificBell.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/MediumPacificBell.png)|
-| NSFNET_21 | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/NSFNET_21.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/NSFNET_21.png)|
-| NSFNET_22 | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/NSFNET_22.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/NSFNET_22.png)|
-| PANEURO | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/PANEURO.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/PANEURO.pdf)|
-| SmallPacificBell | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/SmallPacificBell.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/SmallPacificBell.png) |
-| USA | [xml-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/xml-sample/USA.xml) | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/USA.pdf) |
-| Japan| | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/Japan.png) |
-| France| | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/France.png) |
-| Italy| | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/Italy.png) |
-| Finalnd| | [image-file](https://github.com/lucasrodri/ons/-/tree/master/Topologies/images/Finalnd.png) |
+| 8NodesClick | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/8NodesClick.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/8NodesClick.png)|
+| 8NodesRing | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/8NodesRing.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/8NodesRing.png)|
+| COST239 | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/COST239.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/COST239.png)|
+| GERMAN | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/GERMAN.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/GERMAN.pdf)|
+| LargePacificBell | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/LargePacificBell.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/LargePacificBell.png)|
+| Manhattan4x4 | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/Manhattan4x4.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/Manhattan4x4.png)|
+| Manhattan5x5 | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/Manhattan5x5.xml) | |
+| MediumPacificBell | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/MediumPacificBell.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/MediumPacificBell.png)|
+| NSFNET_21 | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/NSFNET_21.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/NSFNET_21.png)|
+| NSFNET_22 | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/NSFNET_22.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/NSFNET_22.png)|
+| PANEURO | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/PANEURO.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/PANEURO.pdf)|
+| SmallPacificBell | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/SmallPacificBell.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/SmallPacificBell.png) |
+| USA | [xml-file](https://github.com/lucasrodri/ons/blob/main/Topologies/xml-sample/USA.xml) | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/USA.pdf) |
+| Japan| | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/Japan.png) |
+| France| | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/France.png) |
+| Italy| | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/Italy.png) |
+| Finalnd| | [image-file](https://github.com/lucasrodri/ons/blob/main/Topologies/images/Finalnd.png) |
 
 
 
