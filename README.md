@@ -251,8 +251,13 @@ public interface ControlPlaneForRA {
 
 On each call, your algorithm can either accept (via the acceptFlow method) or block (via the blockFlow method) this call. In addition, the algorithm can call the other methods to aid in its procedures.
 
-For details, see [JavaDoc](http://ons-simulator.com/javadoc)
+## JavaDoc
 
+For details, see [JavaDoc](http://ons-simulator.com/javadoc){:target="_blank"}
+
+## WebSite
+
+For details, see [https://ons-simulator.com](https://ons-simulator.com){:target="_blank"}
 
 
 
